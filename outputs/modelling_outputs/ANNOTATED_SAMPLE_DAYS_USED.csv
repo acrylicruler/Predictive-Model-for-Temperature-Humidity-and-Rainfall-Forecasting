@@ -1,0 +1,4 @@
+target,date,family_label,setting_run,model
+t2m_mean,2021-05-23,LSTM,HK_L1_single_lstm,L1-LSTMseq14:t2m_mean-single
+rh2m_mean,2023-01-15,LSTM,HK_L1_single_lstm,L1-LSTMseq14:rh2m_mean-single
+tp_sum_mm,2023-09-02,MLP,HK_L1_multi_flat,L1-TorchMLP-multi
