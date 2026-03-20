@@ -11,3 +11,4 @@ data/interim/regional_daily_KL.parquet filter=lfs diff=lfs merge=lfs -text
 data/processed/regional_features_targets_full.parquet filter=lfs diff=lfs merge=lfs -text
 notebooks/FYP_DataCleaning_EDA.ipynb filter=lfs diff=lfs merge=lfs -text
 notebooks/FYP_Modelling.ipynb filter=lfs diff=lfs merge=lfs -text
+data/regional_features_csv/*.csv filter=lfs diff=lfs merge=lfs -text
