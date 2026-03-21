@@ -1,6 +1,6 @@
 # Predictive Model for Temperature, Humidity, and Rainfall Forecasting
 
-This repository contains the code, data artifacts, notebooks, figures, and selected outputs for an FYP on **next-day weather forecasting**. The project uses historical **ERA5-Land** weather data to predict **temperature**, **relative humidity**, and **precipitation**, with Hong Kong as the target test city and Bangkok, Ho Chi Minh City, and Kuala Lumpur used as source cities in selected experiments.
+This repository contains the code, data artifacts, notebooks, figures, and selected outputs for **next-day weather forecasting**. The project uses historical **ERA5-Land** weather data to predict **temperature**, **relative humidity**, and **precipitation**, with Hong Kong as the target test city and Bangkok, Ho Chi Minh City, and Kuala Lumpur used as source cities in selected experiments.
 
 ## Project Scope
 
