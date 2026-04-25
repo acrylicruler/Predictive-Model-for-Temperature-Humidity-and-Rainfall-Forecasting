@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+geopandas
+shapely
+plotly
+pyarrow
+fastparquet
+scikit-learn
+torch
+joblib
