@@ -1,0 +1,67 @@
+{
+  "generated_from": "best HK-only models",
+  "pipeline": "notebook-aligned next-day supervised + preprocess_supervised + clean_level_valid_rows + city_timeblock test split",
+  "cache_keys": {
+    "t2m_mean": "L1-LSTMseq14:t2m_mean-single__L1_lstm_seq14_single_city_timeblock__TR-HK__VA-HK__TE-HK__trEnd2016-12-31__vaEnd2020-12-31__teEnd2024-12-31__split8d5ee3a4fa__feat8b61264168",
+    "rh2m_mean": "L1-LSTMseq14:rh2m_mean-single__L1_lstm_seq14_single_city_timeblock__TR-HK__VA-HK__TE-HK__trEnd2016-12-31__vaEnd2020-12-31__teEnd2024-12-31__split8d5ee3a4fa__feat8b61264168",
+    "tp_sum_mm": "L1-TorchMLP-multi__L1_multi_city_timeblock__TR-HK__VA-HK__TE-HK__trEnd2016-12-31__vaEnd2020-12-31__teEnd2024-12-31__split047c06ed35__feat8b61264168"
+  },
+  "targets": {
+    "t2m_mean": {
+      "family": "LSTM",
+      "model_tag": "L1-LSTMseq14:t2m_mean-single",
+      "hyperparams": {
+        "hidden_dim": 32,
+        "num_layers": 1,
+        "dropout": 0.0,
+        "lr": 0.0001,
+        "weight_decay": 0.0001,
+        "batch_size": 64,
+        "epochs": 60,
+        "patience": 5
+      },
+      "report_rmse": 1.20353761,
+      "report_r2": 0.943125367
+    },
+    "rh2m_mean": {
+      "family": "LSTM",
+      "model_tag": "L1-LSTMseq14:rh2m_mean-single",
+      "hyperparams": {
+        "hidden_dim": 128,
+        "num_layers": 3,
+        "dropout": 0.2,
+        "lr": 0.001,
+        "weight_decay": 1e-05,
+        "batch_size": 128,
+        "epochs": 40,
+        "patience": 5
+      },
+      "report_rmse": 5.625781535,
+      "report_r2": 0.758519948
+    },
+    "tp_sum_mm": {
+      "family": "MLP",
+      "model_tag": "L1-TorchMLP-multi",
+      "hyperparams": {
+        "model__hidden_layer_sizes": [
+          128
+        ],
+        "model__activation": "relu",
+        "model__lr": 0.001,
+        "model__weight_decay": 0.0001,
+        "model__batch_size": 512,
+        "model__dropout": 0.2,
+        "model__max_epochs": 60,
+        "model__patience": 8
+      },
+      "report_rmse": 128.2012865,
+      "report_r2": 0.393723077
+    }
+  },
+  "prediction_window": {
+    "start": "2021-01-01",
+    "end": "2024-12-31"
+  },
+  "output_parquet": "outputs/app/hk_best_model_predictions.parquet",
+  "output_csv": "outputs/app/hk_best_model_predictions.csv"
+}
