@@ -11,6 +11,7 @@ The project studies whether different modelling strategies are effective for for
 - Exploratory data analysis and data cleaning
 - Model training and evaluation
 - Comparison of forecasting performance across targets and model families
+- Streamlit deployment for interactive Hong Kong next-day weather forecast visualisation
 
 ## Repository Structure
 
@@ -27,12 +28,20 @@ The project studies whether different modelling strategies are effective for for
 │  ├─ FYP_DataCleaning_EDA.ipynb
 │  └─ FYP_Modelling.ipynb
 │
+├─ deployment/
+│  ├─ hk_weather_app_streamlit.py
+│  ├─ hk_best_model_config.py
+│  ├─ make_hk_app_predictions.py
+│  ├─ make_hk_land_assets.py
+│  └─ requirements.txt
+│
 ├─ data/
 │  ├─ interim/
 │  ├─ processed/
 │  └─ regional_features_csv/
 │
 ├─ outputs/
+│  └─ app/
 │  └─ modelling_outputs/
 │
 ├─ figures/
@@ -85,6 +94,22 @@ python src/data_pipeline/04_make_features_and_targets.py
 jupyter notebook
 ```
 
+
+### 7. Run the Streamlit App Locally
+
+The Streamlit app provides an interactive deployment interface for visualising Hong Kong next-day weather forecasts.
+
+Install the app-specific dependencies:
+
+```shell
+pip install -r deployment/requirements.txt
+```
+
+Run the app:
+```shell
+streamlit run deployment/hk_weather_app_streamlit.py
+```
+
 Then open and run these notebooks in order:
 
 1. `notebooks/FYP_DataCleaning_EDA.ipynb`
@@ -123,13 +148,26 @@ Then open and run these notebooks in order:
 
 Contains intermediate and processed data artifacts used by the notebooks and modelling workflow, including parquet files, geojson grids, and CSV datasets.
 
-### `outputs/modelling_outputs/`
+### `outputs/`
 
-Contains selected modelling results such as resolved selected models, annotated sample days, feature importance summaries, and test comparison tables.
+Contains selected modelling and deployment outputs.
+
+- `outputs/modelling_outputs/` stores modelling results such as selected models, annotated sample days, feature importance summaries, and test comparison tables.
+- `outputs/app/` stores the pre-generated Hong Kong prediction files used by the Streamlit app.
 
 ### `figures/`
 
 Contains exported figures used for EDA and modelling analysis.
+
+### `deployment/`
+
+Contains the Streamlit deployment files for the Hong Kong weather forecast application.
+
+- `hk_weather_app_streamlit.py` is the main Streamlit app file.
+- `hk_best_model_config.py` stores the selected best model configuration used for app prediction generation.
+- `make_hk_app_predictions.py` generates the prediction files used by the app.
+- `make_hk_land_assets.py` prepares the Hong Kong geographic assets used for map-based visualisation.
+- `requirements.txt` lists the app-specific Python dependencies.
 
 ## Notes
 
