@@ -1397,7 +1397,7 @@ with st.sidebar:
     st.markdown("## Controls")
     target_label = st.selectbox("Target", list(TARGET_CFG.keys()))
     view_mode = st.radio("Map Layer", ["Best-Model Forecast", "Actual Next-Day Value", "Forecast Error"])
-    color_mode = st.selectbox("Colour Style", ["Continuous", "High-Contrast Bands"], index=0)
+    color_mode = st.selectbox("Colour Style", ["Continuous", "High-Contrast Bands"], index=1)
     clip_q = st.slider("Colour Contrast", min_value=0.80, max_value=0.99, value=0.96, step=0.01)
     clip_to_boundary = st.toggle("Clip Cells To Hong Kong Boundary", value=True)
     render_mode = st.radio("Map Rendering", ["Smoothed Land Surface", "Original Model Regions"], index=0)
@@ -1410,7 +1410,7 @@ if boundary_gdf is None:
 
 with st.sidebar:
     all_dates = sorted(pd.to_datetime(pred_df["target_date"].dropna().unique()))
-    default_date = all_dates[min(len(all_dates) - 1, int(len(all_dates) * 0.8))]
+    default_date = pd.Timestamp("2023-09-02")
     typed_date_str = st.text_input("Select Date", value="", placeholder="YYYY-MM-DD", help="e.g. 2024-03-14")
     slider_date = st.select_slider("Target Date", options=all_dates, value=default_date, format_func=lambda d: pd.Timestamp(d).strftime("%Y-%m-%d"))
     selected_date = slider_date
